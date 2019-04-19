@@ -41,8 +41,16 @@ run mkdir /usr/share/fonts/truetype/Hack
 run mv Hack* /usr/share/fonts/truetype/Hack
 run fc-cache -f -v
 
+RUN echo "root:root" | sudo chpasswd
+
+# config vscode 
+RUN curl https://github.com/shanalikhan/code-settings-sync/releases/download/v3.2.8/code-settings-sync-3.2.8.vsix
+RUN code --install-extension code-settings-sync-3.2.8.vsix
+RUN rm code-settings-sync-3.2.8.vsix
+
 # create our developer user
-RUN useradd -ms /bin/bash dev
+RUN useradd -ms /bin/bash dev && echo "dev:dev" | sudo chpasswd
 USER dev
 WORKDIR /home/dev
+
 
