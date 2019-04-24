@@ -41,12 +41,22 @@ run mkdir /usr/share/fonts/truetype/Hack
 run mv Hack* /usr/share/fonts/truetype/Hack
 run fc-cache -f -v
 
+# install aws cli
+RUN apt install -y python3-pip
+RUN pip3 install awscli --upgrade
+
+
 RUN echo "root:root" | sudo chpasswd
 
 # create our developer user
 RUN useradd -ms /bin/bash dev && echo "dev:dev" | sudo chpasswd
 USER dev
 WORKDIR /home/dev
+
+# configure git
+RUN git config --global core.editor "code --wait"
+RUN git config --global user.email "timothywangdev@gmail.com"
+RUN git config --global user.name "Timothy Wang"
 
 # config vscode 
 RUN wget https://github.com/shanalikhan/code-settings-sync/releases/download/v3.2.8/code-settings-sync-3.2.8.vsix
