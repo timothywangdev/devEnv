@@ -1,0 +1,41 @@
+{
+  "name": "Pytorch",
+  "dockerFile": "Dockerfile",
+  "workspaceMount": "/mnt/6da521ae-93b2-44d6-bd41-422c135def79/projects",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "git.allowForcePush": true,
+    "breadcrumbs.enabled": true,
+    "sync.gist": "e0b378b22df93eedc58f32fc61b5b6f5",
+    "editor.minimap.enabled": false,
+    "git.autofetch": true,
+    "workbench.activityBar.visible": true,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "eslint.autoFixOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Material Theme High Contrast",
+    "terminal.integrated.inheritEnv": false,
+    "python.jediEnabled": false,
+    "gitlens.gitCommands.closeOnFocusOut": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.printWidth": 100,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "workbench.colorCustomizations": {},
+    "materialTheme.accent": "Remove accents",
+    "editor.tabSize": 2,
+    "editor.wordWrapColumn": 100
+  },
+  "runArgs": ["--gpus=all", "--ipc=host"]
+}
